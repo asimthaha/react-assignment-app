@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import AssignmentAdd from "./components/AssignmentAdd";
+import AssignmentSearch from "./components/AssignmentSearch";
+import AssignmentDelete from "./components/AssignmentDelete";
+import AssignmentView from "./components/AssignmentView";
+import AssignmentLogin from "./components/AssignmentLogin";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="" element={<AssignmentLogin />}></Route>
+        <Route path="add" element={<AssignmentAdd />}></Route>
+        <Route path="search" element={<AssignmentSearch />}></Route>
+        <Route path="delete" element={<AssignmentDelete />}></Route>
+        <Route path="view" element={<AssignmentView />}></Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
